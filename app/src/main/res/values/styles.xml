@@ -2,8 +2,6 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme">
-        <color name="bg">#34495E</color>
-        <color name="textCouleur">#FFFFFF</color>
         <!-- Customize your theme here. -->
     </style>
 
