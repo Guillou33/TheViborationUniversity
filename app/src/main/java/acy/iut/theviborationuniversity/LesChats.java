@@ -12,10 +12,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by autierg on 12/02/2016.
+ * Created by autierg on 01/03/2016.
  */
-public class LesProfiles extends Activity  implements View.OnClickListener, AdapterView.OnItemClickListener {
-    //fonction Hashmap pour la liste
+public class LesChats extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener  {
     private HashMap<String, String> fillHashMap(String Title, String summary, String icon){
         HashMap<String, String> item = new HashMap<String, String>();
         item.put("TextAppTitle", Title);
@@ -26,10 +25,10 @@ public class LesProfiles extends Activity  implements View.OnClickListener, Adap
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.liste_etudiants);
+        setContentView(R.layout.liste_chats);
 
         ListView uneliste;
-        uneliste = (ListView)findViewById(R.id.listEtudiant);
+        uneliste = (ListView)findViewById(R.id.listChat);
 
 
         ArrayList<HashMap<String, String>> laliste = new ArrayList<HashMap<String, String>>();
