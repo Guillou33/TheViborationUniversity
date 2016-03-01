@@ -13,7 +13,11 @@
         android:id="@+id/imgProfil"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accéder aux utilisateurs"
+        android:id="@+id/btnUtilisateurs"/>
 
     <Button
         android:layout_width="wrap_content"

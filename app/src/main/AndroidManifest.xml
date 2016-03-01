@@ -17,6 +17,22 @@
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
+        <activity android:label="@string/app_name"
+            android:name=".LesChats">
+
+        </activity>
+        <activity android:label="@string/app_name"
+            android:name=".LesProfiles">
+
+        </activity>
+        <activity android:label="@string/app_name"
+            android:name=".ProfileEtudiant">
+
+        </activity>
+        <activity android:label="@string/app_name"
+            android:name=".ProfileAutreEtudiant">
+
+        </activity>
     </application>
 
 </manifest>
