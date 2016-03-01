@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="#34495E">
+
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/imgProfil"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gérer son profil"
+        android:id="@+id/btnGestionProfil"
+        android:background="#6841F6"
+        android:layout_below="@+id/imgProfil"
+        android:layout_alignLeft="@+id/imgProfil"/>
+
+    <Button
+        android:background="#6841F6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accéder au Chat"
+        android:id="@+id/btnChat"
+        android:layout_above="@+id/listView"
+        android:layout_alignRight="@+id/listView"
+        android:layout_alignEnd="@+id/listView"
+        android:layout_marginRight="38dp"
+        android:layout_marginEnd="38dp" />
+
+    <ListView
+        android:background="#4B86EC"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/listView"
+        android:layout_below="@+id/btnGestionProfil"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:background="#4B86EC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Nom Prenom Section"
+        android:id="@+id/txtProfil"
+        android:layout_below="@+id/imgProfil"
+        android:layout_toLeftOf="@+id/btnChat" />
+</RelativeLayout>

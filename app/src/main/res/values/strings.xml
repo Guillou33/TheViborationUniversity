@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TheViborationUniversity</string>
+    <string name="nom_etudiant">Nom Prenom</string>
 </resources>
