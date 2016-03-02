@@ -3,72 +3,90 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="#34495E">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Photo :"
-        android:id="@+id/txtChangePhoto"/>
-
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:id="@+id/imgProfil"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nom :"
-        android:id="@+id/txtChangeNom"/>
+        android:id="@+id/txtNom"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="31dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/edtChangeNom"/>
+        android:id="@+id/edtNom"
+        android:layout_below="@+id/txtNom"
+        android:layout_alignLeft="@+id/txtNom"
+        android:layout_alignStart="@+id/txtNom" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Prenom :"
-        android:id="@+id/txtChangePrenom"/>
+        android:text="Prénom :"
+        android:id="@+id/txtPrenom"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/edtNom"
+        android:layout_alignLeft="@+id/edtNom"
+        android:layout_alignStart="@+id/edtNom"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/edtChangePrenom"/>
+        android:id="@+id/editText"
+        android:layout_below="@+id/txtPrenom"
+        android:layout_alignLeft="@+id/txtPrenom"
+        android:layout_alignStart="@+id/txtPrenom" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Section :"
-        android:id="@+id/txtChangeSection"/>
+        android:id="@+id/txtSection"
+        android:layout_below="@+id/editText"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_marginTop="30dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/edtChangeSection"/>
+        android:id="@+id/editText2"
+        android:layout_below="@+id/txtSection"
+        android:layout_alignLeft="@+id/txtSection"
+        android:layout_alignStart="@+id/txtSection" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Mettre à jour"
         android:id="@+id/btnMajProfil"
-        android:onClick="majProfil"
-        android:layout_below="@+id/imgProfil"
-        android:layout_alignRight="@+id/imgProfil"
-        android:layout_alignEnd="@+id/imgProfil"
-        android:layout_marginTop="40dp" />
+        android:background="@drawable/button_app"
+        android:textColor="@color/textColor"
+        android:layout_width="85dp"
+        android:layout_height="68dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/editText2"
+        android:layout_toEndOf="@+id/editText2"
+        android:layout_marginBottom="70dp" />
+
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Annuler"
-        android:id="@+id/btnAnnulerProfil"
-        android:onClick="annulProfil"
+        android:id="@+id/btnAnnuler"
+        android:layout_marginRight="53dp"
+        android:layout_marginEnd="53dp"
+        android:background="@drawable/button_app"
+        android:textColor="@color/textColor"
+        android:layout_width="85dp"
+        android:layout_height="68dp"
         android:layout_alignTop="@+id/btnMajProfil"
-        android:layout_toRightOf="@+id/txtChangePhoto"
-        android:layout_toEndOf="@+id/txtChangePhoto" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
 </RelativeLayout>

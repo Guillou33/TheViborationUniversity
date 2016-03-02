@@ -4,9 +4,10 @@
     android:layout_height="match_parent"
     android:background="#34495E">
     <ListView
-        android:background="#4B86EC"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:background="#76A6AA"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
         android:id="@+id/listChat"
+        android:layout_margin="5dp"
         />
 </RelativeLayout>

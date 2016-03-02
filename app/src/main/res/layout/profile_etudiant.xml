@@ -16,43 +16,42 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="400px"
+        android:layout_height="90dp"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:layout_below="@+id/txtProfil"
-        android:id="@+id/panelBtnProfil">
-        <Button
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Accéder aux utilisateurs"
-            android:id="@+id/btnUtilisateurs" />
+        android:id="@+id/panelBtnProfil"
+        android:weightSum="1">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gérer son profil"
-            android:id="@+id/btnGestionProfil"
+            android:layout_width="85dp"
+            android:layout_height="68dp"
+            android:text="Accéder aux étudiants"
+            android:id="@+id/btnUtilisateurs"
+            android:background="@drawable/button_app"
+            android:textColor="@color/textColor"
             />
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Accéder au Chat"
+            android:layout_height="67dp"
+            android:text="Modifer son profil"
+            android:id="@+id/btnModifProfil"
+            android:background="@drawable/button_app"
+            android:textColor="@color/textColor"
+            android:layout_margin="@dimen/spacing" />
+
+        <Button
+            android:layout_width="87dp"
+            android:layout_height="65dp"
+            android:text="Accéder aux Chats"
             android:id="@+id/btnChat"
+            android:background="@drawable/button_app"
+            android:textColor="@color/textColor"
             />
     </LinearLayout>
-
-    <ListView
-        android:background="#4B86EC"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/listView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/panelBtnProfil"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -62,4 +61,15 @@
         android:id="@+id/txtProfil"
         android:layout_below="@+id/imgProfil"
         android:layout_centerHorizontal="true" />
+
+    <ListView
+        android:background="#76A6AA"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:id="@+id/listView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/panelBtnProfil"
+
+        />
 </RelativeLayout>
