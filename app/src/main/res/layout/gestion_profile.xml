@@ -57,11 +57,18 @@
         android:layout_height="wrap_content"
         android:text="Mettre à jour"
         android:id="@+id/btnMajProfil"
-        android:onClick="majProfil"/>
+        android:onClick="majProfil"
+        android:layout_below="@+id/imgProfil"
+        android:layout_alignRight="@+id/imgProfil"
+        android:layout_alignEnd="@+id/imgProfil"
+        android:layout_marginTop="40dp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Annuler"
         android:id="@+id/btnAnnulerProfil"
-        android:onClick="annulProfil"/>
+        android:onClick="annulProfil"
+        android:layout_alignTop="@+id/btnMajProfil"
+        android:layout_toRightOf="@+id/txtChangePhoto"
+        android:layout_toEndOf="@+id/txtChangePhoto" />
 </RelativeLayout>
