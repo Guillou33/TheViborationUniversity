@@ -56,10 +56,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mettre à jour"
-        android:id="@+id/btnMajProfil"/>
+        android:id="@+id/btnMajProfil"
+        android:onClick="majProfil"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Annuler"
-        android:id="@+id/btnAnnulerProfil"/>
+        android:id="@+id/btnAnnulerProfil"
+        android:onClick="annulProfil"/>
 </RelativeLayout>

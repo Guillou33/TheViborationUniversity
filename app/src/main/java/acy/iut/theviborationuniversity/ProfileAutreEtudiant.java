@@ -8,6 +8,7 @@ import android.os.Bundle;
  */
 public class ProfileAutreEtudiant extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
-
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.profile_autre_etudiant);
     }
 }
