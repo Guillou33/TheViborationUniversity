@@ -6,6 +6,16 @@
     android:orientation="vertical"
     android:background="#34495E">
 
+    <Button
+        android:layout_width="57dp"
+        android:layout_height="wrap_content"
+        android:text="Retour"
+        android:id="@+id/btnRetourChats"
+        android:layout_margin="@dimen/spacing"
+        android:background="@drawable/button_app"
+        android:textColor="@color/textColor"
+        android:layout_weight="0.03" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/messages"
         android:layout_width="match_parent"
@@ -27,7 +37,7 @@
             android:id="@+id/message_input"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.56"
             android:hint="@string/prompt_message"
             android:imeActionLabel="@string/action_send"
             android:imeOptions="actionSend"
@@ -40,7 +50,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_menu_send"
-            android:contentDescription="@string/action_send"/>
+            android:contentDescription="@string/action_send"
+            android:background="@drawable/button_app"
+            android:textColor="@color/textColor"/>
 
     </LinearLayout>
 
