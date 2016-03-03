@@ -37,6 +37,14 @@
             android:name=".ModifProfil">
 
         </activity>
+        <activity android:label="@string/app_name"
+            android:name=".InsertTrack">
+
+        </activity>
+        <activity android:label="@string/app_name"
+            android:name=".DeleteTrack">
+
+        </activity>
     </application>
 
 </manifest>

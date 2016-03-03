@@ -35,4 +35,16 @@ public class ProfileEtudiant extends Activity{
         Intent intentAccessChats = new Intent(this, LesChats.class);
         startActivity(intentAccessChats);
     }
+
+    public void ajoutMusique(View v){
+        Context context = getApplicationContext();
+        Intent intentAjout = new Intent(this, InsertTrack.class);
+        startActivity(intentAjout);
+    }
+
+    public void supprMusique(View v){
+        Context context = getApplicationContext();
+        Intent intentSuppr = new Intent(this, DeleteTrack.class);
+        startActivity(intentSuppr);
+    }
 }

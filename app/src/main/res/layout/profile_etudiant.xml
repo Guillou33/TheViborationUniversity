@@ -91,13 +91,28 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+"
-        android:id="@+id/btnAjoutMusique"
+        android:text="-"
+        android:id="@+id/btnSupprMusique"
         android:background="@drawable/button_app"
         android:textColor="@color/textColor"
         android:layout_alignTop="@+id/txtMusiques"
         android:layout_toRightOf="@+id/panelBtnProfil"
         android:layout_alignBottom="@+id/txtMusiques"
         android:layout_alignRight="@+id/listMesMusiques"
-        android:layout_alignEnd="@+id/listMesMusiques" />
+        android:layout_alignEnd="@+id/listMesMusiques"
+        android:onClick="supprMusique"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:id="@+id/btnAjoutMusique"
+        android:background="@drawable/button_app"
+        android:textColor="@color/textColor"
+        android:layout_alignTop="@+id/txtMusiques"
+        android:layout_alignBottom="@+id/txtMusiques"
+        android:layout_toStartOf="@+id/btnSupprMusique"
+        android:layout_toLeftOf="@+id/btnSupprMusique"
+        android:onClick="ajoutMusique"/>
 </RelativeLayout>
