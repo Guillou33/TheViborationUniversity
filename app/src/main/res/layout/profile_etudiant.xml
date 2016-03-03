@@ -35,7 +35,7 @@
             />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="86dp"
             android:layout_height="67dp"
             android:text="Modifer son profil"
             android:id="@+id/btnModifProfil"
@@ -69,7 +69,32 @@
         android:id="@+id/listView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/panelBtnProfil"
-
+        android:layout_below="@+id/txtMusiques"
         />
+
+    <TextView
+        android:layout_margin="@dimen/spacing"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mes musiques :"
+        android:id="@+id/txtMusiques"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/panelBtnProfil"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:id="@+id/btnAjoutMusique"
+        android:background="@drawable/button_app"
+        android:textColor="@color/textColor"
+        android:layout_alignTop="@+id/txtMusiques"
+        android:layout_toRightOf="@+id/panelBtnProfil"
+        android:layout_alignBottom="@+id/txtMusiques"
+        android:layout_alignRight="@+id/listView"
+        android:layout_alignEnd="@+id/listView" />
 </RelativeLayout>
