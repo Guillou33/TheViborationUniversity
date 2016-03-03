@@ -16,6 +16,15 @@
         android:textColor="@color/textColor"
         android:layout_weight="0.03" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Un Chat"
+        android:id="@+id/txtNomChat"
+        android:layout_toRightOf="@+id/btnRetourChats"
+        android:layout_gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/messages"
         android:layout_width="match_parent"

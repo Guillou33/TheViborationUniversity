@@ -104,7 +104,7 @@
 
     <Button
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+        android:layout_width="90px"
         android:layout_height="wrap_content"
         android:text="+"
         android:id="@+id/btnAjoutMusique"
@@ -114,5 +114,6 @@
         android:layout_alignBottom="@+id/txtMusiques"
         android:layout_toStartOf="@+id/btnSupprMusique"
         android:layout_toLeftOf="@+id/btnSupprMusique"
-        android:onClick="ajoutMusique"/>
+        android:onClick="ajoutMusique"
+        android:layout_marginRight="1px"/>
 </RelativeLayout>

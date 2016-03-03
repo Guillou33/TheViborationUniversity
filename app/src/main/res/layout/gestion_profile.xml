@@ -23,18 +23,19 @@
         android:id="@+id/edtNom"
         android:layout_below="@+id/txtNom"
         android:layout_alignLeft="@+id/txtNom"
-        android:layout_alignStart="@+id/txtNom" />
+        android:layout_alignStart="@+id/txtNom"
+        android:layout_alignRight="@+id/btnAnnuler"
+        android:layout_alignEnd="@+id/btnAnnuler" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Prénom :"
         android:id="@+id/txtPrenom"
-        android:layout_marginTop="31dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_below="@+id/edtNom"
         android:layout_alignLeft="@+id/edtNom"
-        android:layout_alignStart="@+id/edtNom"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignStart="@+id/edtNom" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -42,18 +43,19 @@
         android:id="@+id/editText"
         android:layout_below="@+id/txtPrenom"
         android:layout_alignLeft="@+id/txtPrenom"
-        android:layout_alignStart="@+id/txtPrenom" />
+        android:layout_alignStart="@+id/txtPrenom"
+        android:layout_alignRight="@+id/btnAnnuler"
+        android:layout_alignEnd="@+id/btnAnnuler" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Section :"
         android:id="@+id/txtSection"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_below="@+id/editText"
         android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:layout_marginTop="30dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:layout_alignStart="@+id/editText" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -61,7 +63,9 @@
         android:id="@+id/editText2"
         android:layout_below="@+id/txtSection"
         android:layout_alignLeft="@+id/txtSection"
-        android:layout_alignStart="@+id/txtSection" />
+        android:layout_alignStart="@+id/txtSection"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText" />
 
     <Button
         android:text="Mettre à jour"
@@ -70,10 +74,10 @@
         android:textColor="@color/textColor"
         android:layout_width="85dp"
         android:layout_height="68dp"
+        android:layout_marginBottom="77dp"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/editText2"
-        android:layout_toEndOf="@+id/editText2"
-        android:layout_marginBottom="70dp" />
+        android:layout_alignLeft="@+id/txtPseudo"
+        android:layout_alignStart="@+id/txtPseudo" />
 
     <Button
         android:text="Annuler"
@@ -87,6 +91,26 @@
         android:layout_alignTop="@+id/btnMajProfil"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pseudo :"
+        android:id="@+id/txtPseudo"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/editText2"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignStart="@+id/editText2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText3"
+        android:layout_below="@+id/txtPseudo"
+        android:layout_alignLeft="@+id/txtPseudo"
+        android:layout_alignStart="@+id/txtPseudo"
+        android:layout_alignRight="@+id/btnAnnuler"
+        android:layout_alignEnd="@+id/btnAnnuler" />
 
 
 </RelativeLayout>
