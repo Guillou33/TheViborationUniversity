@@ -9,7 +9,7 @@ import android.os.Bundle;
 public class DeleteTrack extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.profile_etudiant);
+        setContentView(R.layout.suppr_musique);
 
 
     }
