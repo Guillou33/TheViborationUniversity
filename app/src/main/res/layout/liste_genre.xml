@@ -7,6 +7,22 @@
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:id="@+id/listGenres"
-        android:layout_margin="5dp"
-        />
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/btnAjoutGenre"
+        android:descendantFocusability="blocksDescendants"/>
+
+    <Button
+        android:layout_margin="@dimen/spacing"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Ajouter ce genre à mon profil"
+        android:id="@+id/btnAjoutGenre"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/button_app"
+        android:textColor="@color/textColor"
+        android:onClick="ajoutGenre"/>
 </RelativeLayout>

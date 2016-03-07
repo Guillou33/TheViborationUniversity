@@ -1,5 +1,7 @@
 package acy.iut.theviborationuniversity;
 
+import java.util.List;
+
 /**
  * Created by autierg on 03/03/2016.
  */
@@ -7,14 +9,23 @@ public class Musique {
     private int idmusique;
     private String titremusique;
     private String artistemusique;
-    private String lesgenreassocies;
+    private List<Genre> lesgenresassocies;
+    private String urlfile;
 
-    public String getLesgenreassocies() {
-        return lesgenreassocies;
+    public List<Genre> getLesgenresassocies() {
+        return lesgenresassocies;
     }
 
-    public void setLesgenreassocies(String lesgenreassocies) {
-        this.lesgenreassocies = lesgenreassocies;
+    public void setLesgenresassocies(List<Genre> lesgenresassocies) {
+        this.lesgenresassocies = lesgenresassocies;
+    }
+
+    public String getUrlfile() {
+        return urlfile;
+    }
+
+    public void setUrlfile(String urlfile) {
+        this.urlfile = urlfile;
     }
 
     public int getIdmusique() {
@@ -41,10 +52,11 @@ public class Musique {
         this.artistemusique = artistemusique;
     }
 
-    public Musique(int idmusique, String titremusique, String artistemusique, String lesgenreassocies) {
+    public Musique(int idmusique, String titremusique, String artistemusique, List<Genre> lesgenresassocies, String urlfile) {
         this.idmusique = idmusique;
         this.titremusique = titremusique;
         this.artistemusique = artistemusique;
-        this.lesgenreassocies = lesgenreassocies;
+        this.lesgenresassocies = lesgenresassocies;
+        this.urlfile = urlfile;
     }
 }

@@ -54,4 +54,8 @@ public class LesGenres extends Activity {
 
         startActivity(intentProfile);
     }
+
+    public void ajoutGenre(View v){
+
+    }
 }

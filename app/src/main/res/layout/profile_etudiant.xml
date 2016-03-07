@@ -28,7 +28,7 @@
         <Button
             android:layout_width="85dp"
             android:layout_height="68dp"
-            android:text="Accéder à mes genres de musique"
+            android:text="Mes genres de musique"
             android:id="@+id/btnGenres"
             android:background="@drawable/button_app"
             android:textColor="@color/textColor"
@@ -48,7 +48,7 @@
         <Button
             android:layout_width="87dp"
             android:layout_height="65dp"
-            android:text="Accéder à mes Chats"
+            android:text="Accéder aux Chats"
             android:id="@+id/btnChat"
             android:background="@drawable/button_app"
             android:textColor="@color/textColor"

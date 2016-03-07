@@ -3,6 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="120px"
+    android:background="#34495E"
     >
     <ImageView android:layout_width="100px" android:layout_height="wrap_content" android:id="@+id/App_icon"
         android:padding="10px" android:layout_gravity="center_vertical" ></ImageView>
