@@ -41,18 +41,10 @@ public class LesGenres extends Activity {
                 new String[] {"TextAppTitle", "TextAppSummary", "App_icon"}, new int[] {R.id.TextAppTitle,
                 R.id.TextAppSummary, R.id.App_icon});
         uneliste.setAdapter(itemsAdapter);
-        uneliste.setOnItemClickListener((AdapterView.OnItemClickListener) this);
     }
 
     public void onClick(View v){
 
-    }
-
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-        Intent intentProfile = new Intent(parent.getContext(), view.getClass());
-        intentProfile.putExtra("luc", "yo");
-
-        startActivity(intentProfile);
     }
 
     public void ajoutGenre(View v){

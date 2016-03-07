@@ -77,8 +77,8 @@ public class ProfileEtudiant extends Activity{
 
     public void accessModifProfil(View v){
         Context context = getApplicationContext();
-        Intent intentAccessModfiProfil = new Intent(this, ModifProfil.class);
-        startActivity(intentAccessModfiProfil);
+        Intent intentAccessModifProfil = new Intent(this, ModifProfil.class);
+        startActivity(intentAccessModifProfil);
     }
 
     public void accessChats(View v){

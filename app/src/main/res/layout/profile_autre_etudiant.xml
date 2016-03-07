@@ -45,4 +45,17 @@
         android:layout_alignParentStart="true"
 
         />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="Les Genres qu&apos;il aime"
+        android:id="@+id/btnSesGenres"
+        android:layout_alignTop="@+id/txtSesMusiques"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/button_app"
+        android:textColor="@color/textColor"
+        android:onClick="accessSesGenres"/>
 </RelativeLayout>

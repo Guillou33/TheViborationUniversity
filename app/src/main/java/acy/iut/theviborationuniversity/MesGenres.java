@@ -2,9 +2,7 @@ package acy.iut.theviborationuniversity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -14,12 +12,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by autierg on 01/03/2016.
+ * Created by autierg on 07/03/2016.
  */
-public class ProfileAutreEtudiant extends Activity {
-
-    public ListView uneliste;
-
+public class MesGenres extends Activity {
     private HashMap<String, String> fillHashMap(String Title, String summary, String icon){
         HashMap<String, String> item = new HashMap<String, String>();
         item.put("TextAppTitle", Title);
@@ -30,9 +25,10 @@ public class ProfileAutreEtudiant extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.profile_autre_etudiant);
+        setContentView(R.layout.genres_disponibles);
 
-        uneliste = (ListView)findViewById(R.id.listMusiques);
+        ListView uneliste;
+        uneliste = (ListView)findViewById(R.id.listMesGenres);
 
 
         ArrayList<HashMap<String, String>> laliste = new ArrayList<HashMap<String, String>>();
@@ -44,29 +40,17 @@ public class ProfileAutreEtudiant extends Activity {
                 new String[] {"TextAppTitle", "TextAppSummary", "App_icon"}, new int[] {R.id.TextAppTitle,
                 R.id.TextAppSummary, R.id.App_icon});
         uneliste.setAdapter(itemsAdapter);
-        uneliste.setClickable(true);
-        uneliste.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-                switch (position) {
-                    case 0:
-
-                        break;
-                    case 1:
-
-                        break;
-                    case 2:
-
-                        break;
-                    default:
-                        Log.d("Error", "Erreur dans le lancement");
-                }
-            }
-        });
+        uneliste.setOnItemClickListener((AdapterView.OnItemClickListener) this);
     }
 
-    public void accessSesGenres(View v){
-        Intent intentsesgenres = new Intent(this, LesGenres.class);
-        startActivity(intentsesgenres);
+    public void onClick(View v){
+
+    }
+
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+        Intent intentProfile = new Intent(parent.getContext(), view.getClass());
+        intentProfile.putExtra("luc", "yo");
+
+        startActivity(intentProfile);
     }
 }
