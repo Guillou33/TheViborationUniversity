@@ -18,11 +18,20 @@
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
         <activity android:label="@string/app_name"
+            android:name=".MainMenu">
+
+        </activity>
+        <activity android:label="@string/app_name"
             android:name=".LesChats">
 
         </activity>
         <activity android:label="@string/app_name"
             android:name=".LesProfiles">
+
+        </activity>
+
+        <activity android:label="@string/app_name"
+            android:name=".LesGenres">
 
         </activity>
         <activity android:label="@string/app_name"
@@ -45,6 +54,7 @@
             android:name=".DeleteTrack">
 
         </activity>
+
     </application>
 
 </manifest>

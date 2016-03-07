@@ -69,9 +69,9 @@ public class ProfileEtudiant extends Activity{
 
     }
 
-    public void accessStudents(View v){
+    public void accessGenres(View v){
         Context context = getApplicationContext();
-        Intent intentAccessStudents = new Intent(this, LesProfiles.class);
+        Intent intentAccessStudents = new Intent(this, LesGenres.class);
         startActivity(intentAccessStudents);
     }
 

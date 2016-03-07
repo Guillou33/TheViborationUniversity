@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#34495E">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Les Genres de Musique"
+        android:id="@+id/btnAccessGenres"
+        android:background="@drawable/button_app"
+        android:textColor="@color/textColor"
+        android:layout_below="@+id/btnAccessProfil"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:onClick="accessLesGenres"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Les Etudiants"
+        android:id="@+id/btnStudents"
+        android:layout_below="@+id/btnAccessGenres"
+        android:background="@drawable/button_app"
+        android:textColor="@color/textColor"
+        android:layout_marginTop="@dimen/spacing"
+        android:layout_marginBottom="@dimen/spacing"
+        android:layout_alignLeft="@+id/btnAccessGenres"
+        android:layout_alignStart="@+id/btnAccessGenres"
+        android:layout_alignRight="@+id/btnAccessGenres"
+        android:layout_alignEnd="@+id/btnAccessGenres"
+        android:onClick="accessLesEtudiants"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Les Chats"
+        android:id="@+id/btnAccessChats"
+        android:layout_below="@+id/btnStudents"
+        android:background="@drawable/button_app"
+        android:textColor="@color/textColor"
+        android:layout_marginTop="@dimen/spacing"
+        android:layout_marginBottom="@dimen/spacing"
+        android:layout_alignRight="@+id/btnStudents"
+        android:layout_alignEnd="@+id/btnStudents"
+        android:layout_alignLeft="@+id/btnStudents"
+        android:layout_alignStart="@+id/btnStudents"
+        android:onClick="accessLesChats"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Mon Profil"
+        android:id="@+id/btnAccessProfil"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/button_app"
+        android:textColor="@color/textColor"
+        android:layout_marginBottom="@dimen/spacing"
+        android:layout_alignLeft="@+id/btnAccessGenres"
+        android:layout_alignStart="@+id/btnAccessGenres"
+        android:layout_alignRight="@+id/btnAccessGenres"
+        android:layout_alignEnd="@+id/btnAccessGenres"
+        android:layout_marginTop="38dp"
+        android:onClick="accessProfil"/>
+</RelativeLayout>
