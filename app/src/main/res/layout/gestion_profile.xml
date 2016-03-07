@@ -77,7 +77,8 @@
         android:layout_marginBottom="77dp"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/txtPseudo"
-        android:layout_alignStart="@+id/txtPseudo" />
+        android:layout_alignStart="@+id/txtPseudo"
+        android:onClick="MajProfil"/>
 
     <Button
         android:text="Annuler"

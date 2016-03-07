@@ -2,6 +2,7 @@ package acy.iut.theviborationuniversity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 
 /**
  * Created by autierg on 03/03/2016.
@@ -14,5 +15,8 @@ public class ModifProfil extends Activity {
 
     }
 
+    public void MajProfil(View v){
+
+    }
 
 }
