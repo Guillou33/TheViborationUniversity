@@ -11,6 +11,9 @@ public class Etudiant {
     private String passwordeleve;
     private String sectioneleve;
     private String pseudoeleve;
+    private int age;
+    private String sexe;
+    private String pathImage;
 
     public int getIdeleve() {
         return ideleve;
@@ -68,7 +71,31 @@ public class Etudiant {
         this.pseudoeleve = pseudoeleve;
     }
 
-    public Etudiant(int ideleve, String nomeleve, String prenomeleve, String logineleve, String passwordeleve, String sectioneleve, String pseudoeleve) {
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getSexe() {
+        return sexe;
+    }
+
+    public void setSexe(String sexe) {
+        this.sexe = sexe;
+    }
+
+    public String getPathImage() {
+        return pathImage;
+    }
+
+    public void setPathImage(String pathImage) {
+        this.pathImage = pathImage;
+    }
+
+    public Etudiant(int ideleve, String nomeleve, String prenomeleve, String logineleve, String passwordeleve, String sectioneleve, String pseudoeleve, int age, String sexe, String pathImage) {
         this.ideleve = ideleve;
         this.nomeleve = nomeleve;
         this.prenomeleve = prenomeleve;
@@ -76,5 +103,10 @@ public class Etudiant {
         this.passwordeleve = passwordeleve;
         this.sectioneleve = sectioneleve;
         this.pseudoeleve = pseudoeleve;
+        this.age = age;
+        this.sexe = sexe;
+        this.pathImage = pathImage;
     }
+
+
 }
