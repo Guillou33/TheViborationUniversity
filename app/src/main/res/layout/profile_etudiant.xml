@@ -14,48 +14,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="90dp"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_below="@+id/txtProfil"
-        android:id="@+id/panelBtnProfil"
-        android:weightSum="1">
-
-        <Button
-            android:layout_width="85dp"
-            android:layout_height="68dp"
-            android:text="Mes genres de musique"
-            android:id="@+id/btnGenres"
-            android:background="@drawable/button_app"
-            android:textColor="@color/textColor"
-            android:onClick="accessGenres"
-            />
-
-        <Button
-            android:layout_width="86dp"
-            android:layout_height="67dp"
-            android:text="Modifer mon profil"
-            android:id="@+id/btnModifProfil"
-            android:background="@drawable/button_app"
-            android:textColor="@color/textColor"
-            android:layout_margin="@dimen/spacing"
-            android:onClick="accessModifProfil"/>
-
-        <Button
-            android:layout_width="87dp"
-            android:layout_height="65dp"
-            android:text="Accéder aux Chats"
-            android:id="@+id/btnChat"
-            android:background="@drawable/button_app"
-            android:textColor="@color/textColor"
-            android:onClick="accessChats"
-            />
-    </LinearLayout>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -85,35 +43,28 @@
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/panelBtnProfil"/>
+        android:layout_below="@+id/txtProfil" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:id="@+id/btnAjout"
+        android:layout_toEndOf="@+id/txtMusiques"
+        android:layout_alignTop="@+id/txtMusiques"
+        android:layout_alignBottom="@+id/txtMusiques"
+        android:layout_toRightOf="@+id/txtMusiques" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-"
-        android:id="@+id/btnSupprMusique"
-        android:background="@drawable/button_app"
-        android:textColor="@color/textColor"
-        android:layout_alignTop="@+id/txtMusiques"
-        android:layout_toRightOf="@+id/panelBtnProfil"
-        android:layout_alignBottom="@+id/txtMusiques"
-        android:layout_alignRight="@+id/listMesMusiques"
-        android:layout_alignEnd="@+id/listMesMusiques"
-        android:onClick="supprMusique"/>
+        android:text="New Button"
+        android:id="@+id/button2"
+        android:layout_toRightOf="@+id/button"
+        android:layout_toEndOf="@+id/button"
+        android:layout_alignBottom="@+id/button"
+        android:layout_alignTop="@+id/button" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="90px"
-        android:layout_height="wrap_content"
-        android:text="+"
-        android:id="@+id/btnAjoutMusique"
-        android:background="@drawable/button_app"
-        android:textColor="@color/textColor"
-        android:layout_alignTop="@+id/txtMusiques"
-        android:layout_alignBottom="@+id/txtMusiques"
-        android:layout_toStartOf="@+id/btnSupprMusique"
-        android:layout_toLeftOf="@+id/btnSupprMusique"
-        android:onClick="ajoutMusique"
-        android:layout_marginRight="1px"/>
 </RelativeLayout>
