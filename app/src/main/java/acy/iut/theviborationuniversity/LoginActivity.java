@@ -16,6 +16,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,6 +27,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.DataOutputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +41,7 @@ import java.util.List;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
+public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>, OnClickListener {
 
     /**
      * A dummy authentication store containing known user names and passwords.
@@ -52,6 +60,13 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private static final String FLAG_SUCCESS = "success";
+    private static final String FLAG_MESSAGE = "message";
+    private static final String LOGIN_URL = "http://houdayec.alwaysdata.net/login.php"; // ajustez selon votre adresse de serveur
+
+    Button buttonLogin = (Button)findViewById(R.id.buttonLogin);
+    EditText email = (EditText)findViewById(R.id.emailBox);
+    EditText password = (EditText)findViewById(R.id.passwordBox);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +101,36 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mProgressView = findViewById(R.id.login_progress);
     }
 
+    @Override
+    public void onClick(View v){
+        switch(v.getId()){
+            case R.id.buttonLogin:
+                Log.d("Connexion", "Connect Button Pressed !");
+                Etudiant credential = new Etudiant();
+                credential.setLogineleve(email.getText().toString());
+                credential.setPasswordeleve(password.getText().toString());
+                JSONObject jsonResponse= new JSONObject();
+                try{
+                    URL url = new URL(LOGIN_URL);
+                    HttpURLConnection connection = (HttpURLConnection )url.openConnection();
+                    connection.setRequestMethod("POST");
+                    String urlParameters = "loginEtudiant="+credential.getLogineleve()+"&passwordEtudiant="+credential.getPasswordeleve();
+                    connection.setRequestProperty( "Content-Length", ""+postData.length );
+                    try( DataOutputStream wr = new DataOutputStream( connection.getOutputStream())) {
+                        wr.write( postData );
+                    }
+                    Log.d("HttpRequestTaskManager:doInBackground", "ready to send request...");
+                    connection.connect();
+// decode response
+                    InputStream in = new BufferedInputStream(connection.getInputStream());
+                    jsonResponse = new JSONObject(convertStreamToString(in));
+// check if connection status is OK
+                    int loginOK = jsonResponse.getInt(FLAG_SUCCESS);
+                    connectionStatus.setText(jsonResponse.getString(FLAG_MESSAGE));
+
+                break;
+        }
+    }
     private void populateAutoComplete() {
         getLoaderManager().initLoader(0, null, this);
     }
