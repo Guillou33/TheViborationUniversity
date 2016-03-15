@@ -27,12 +27,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -106,27 +108,31 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>, 
         switch(v.getId()){
             case R.id.buttonLogin:
                 Log.d("Connexion", "Connect Button Pressed !");
-                Etudiant credential = new Etudiant();
-                credential.setLogineleve(email.getText().toString());
-                credential.setPasswordeleve(password.getText().toString());
-                JSONObject jsonResponse= new JSONObject();
                 try{
+                    //Connexion au fichier php
                     URL url = new URL(LOGIN_URL);
-                    HttpURLConnection connection = (HttpURLConnection )url.openConnection();
-                    connection.setRequestMethod("POST");
-                    String urlParameters = "loginEtudiant="+credential.getLogineleve()+"&passwordEtudiant="+credential.getPasswordeleve();
-                    connection.setRequestProperty( "Content-Length", ""+postData.length );
-                    try( DataOutputStream wr = new DataOutputStream( connection.getOutputStream())) {
-                        wr.write( postData );
-                    }
-                    Log.d("HttpRequestTaskManager:doInBackground", "ready to send request...");
-                    connection.connect();
-// decode response
-                    InputStream in = new BufferedInputStream(connection.getInputStream());
-                    jsonResponse = new JSONObject(convertStreamToString(in));
-// check if connection status is OK
-                    int loginOK = jsonResponse.getInt(FLAG_SUCCESS);
-                    connectionStatus.setText(jsonResponse.getString(FLAG_MESSAGE));
+                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                    urlConnection.connect();
+
+
+                    InputStream inputStream = connection.getInputStream();
+                    String result = InputStreamOperations.InputStreamToString(inputStream);
+
+                    // On récupère le JSON complet
+                    JSONObject jsonObject = new JSONObject(result);
+                    // On récupère le tableau d'objets qui nous concernent
+                    JSONArray array = new JSONArray(jsonObject.getString("etudiant"));
+                    // Pour tous les objets on récupère les infos
+                }catch (MalformedURLException e) {
+
+                    e.printStackTrace();
+                }
+
+            /*
+             * InputStreamOperations est une classe complémentaire:
+             * Elle contient une méthode InputStreamToString.
+             */
+
 
                 break;
         }
