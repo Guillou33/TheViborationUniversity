@@ -28,14 +28,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.DataOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,21 +69,23 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>, 
     private static final String FLAG_SUCCESS = "success";
     private static final String FLAG_MESSAGE = "message";
     private static final String LOGIN_URL = "http://houdayec.alwaysdata.net/login.php"; // ajustez selon votre adresse de serveur
-
-    Button buttonLogin = (Button)findViewById(R.id.buttonLogin);
-    EditText email = (EditText)findViewById(R.id.emailBox);
-    EditText password = (EditText)findViewById(R.id.passwordBox);
+    TextView connectionStatus;
+    Button buttonLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        buttonLogin = (Button)findViewById(R.id.loginButton);
+        //EditText email = (EditText)findViewById(R.id.emailBox);
+        //EditText password = (EditText)findViewById(R.id.passwordBox);
+        connectionStatus = (TextView)findViewById(R.id.connectionStatus);
         // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
+        mEmailView = (AutoCompleteTextView) findViewById(R.id.emailBox);
         populateAutoComplete();
 
-        mPasswordView = (EditText) findViewById(R.id.password);
+        mPasswordView = (EditText) findViewById(R.id.passwordBox);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -91,42 +97,54 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>, 
             }
         });
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
-        mEmailSignInButton.setOnClickListener(new OnClickListener() {
+        //Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        /*mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 attemptLogin();
             }
-        });
+        });*/
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
     }
 
     @Override
-    public void onClick(View v){
-        switch(v.getId()){
-            case R.id.buttonLogin:
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.loginButton:
+                attemptLogin();
                 Log.d("Connexion", "Connect Button Pressed !");
-                try{
+                try {
                     //Connexion au fichier php
-                    URL url = new URL(LOGIN_URL);
-                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                    urlConnection.connect();
+                    JSONObject jsonResponse = new JSONObject();
+                    try {
+                        URL url = new URL(LOGIN_URL);
+                        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                        connection.setRequestMethod("POST");
+                        String urlParameters = "loginEtudiant=" + mEmailView.getText() + "&passwordEtudiant=" + mPasswordView.getText();
+                        byte[] postData = urlParameters.getBytes(StandardCharsets.UTF_8);
+                        connection.setRequestProperty("Content-Length", "" + postData.length);
+                        Log.d("HttpRequestTaskManager", "ready to send request...");
+                        connection.connect();
+// decode response
+                        InputStream in = new BufferedInputStream(connection.getInputStream());
+                        jsonResponse = new JSONObject(convertStreamToString(in));
+// check if connection status is OK
+                        int loginOK = jsonResponse.getInt(FLAG_SUCCESS);
+                        Log.d("Retour :", jsonResponse.getString("loginEtudiant"));
+                        connectionStatus.setText(jsonResponse.getString(FLAG_MESSAGE));
+                        // Pour tous les objets on récupère les infos
+                    } catch (MalformedURLException e) {
 
-
-                    InputStream inputStream = connection.getInputStream();
-                    String result = InputStreamOperations.InputStreamToString(inputStream);
-
-                    // On récupère le JSON complet
-                    JSONObject jsonObject = new JSONObject(result);
-                    // On récupère le tableau d'objets qui nous concernent
-                    JSONArray array = new JSONArray(jsonObject.getString("etudiant"));
-                    // Pour tous les objets on récupère les infos
-                }catch (MalformedURLException e) {
-
-                    e.printStackTrace();
-                }
+                        e.printStackTrace();
+                    } catch (ProtocolException e) {
+                        e.printStackTrace();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
             /*
              * InputStreamOperations est une classe complémentaire:
@@ -134,7 +152,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>, 
              */
 
 
-                break;
+                    break;
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
         }
     }
     private void populateAutoComplete() {
@@ -349,6 +370,14 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor>, 
             mAuthTask = null;
             showProgress(false);
         }
+
+
+
+    }
+
+    public String convertStreamToString(java.io.InputStream is){
+        java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
+        return s.hasNext() ? s.next() : "";
     }
 }
 
