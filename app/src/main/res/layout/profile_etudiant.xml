@@ -18,10 +18,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Nom Prenom Section"
         android:id="@+id/txtProfil"
         android:layout_below="@+id/imgProfil"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="mmange ma bite de negf" />
 
     <ListView
         android:background="#76A6AA"
@@ -56,15 +56,14 @@
         android:layout_alignBottom="@+id/txtMusiques"
         android:layout_toRightOf="@+id/txtMusiques" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button2"
-        android:layout_toRightOf="@+id/button"
-        android:layout_toEndOf="@+id/button"
-        android:layout_alignBottom="@+id/button"
-        android:layout_alignTop="@+id/button" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Mytxt"
+        android:id="@+id/pd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+         />
 
 </RelativeLayout>

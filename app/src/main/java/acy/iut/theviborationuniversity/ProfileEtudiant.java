@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,6 +22,8 @@ import java.util.HashMap;
 public class ProfileEtudiant extends Activity{
 
     public ListView uneliste;
+    public String loginEtudiant;
+
 
     private HashMap<String, String> fillHashMap(String Title, String summary, String icon){
         HashMap<String, String> item = new HashMap<String, String>();
@@ -31,10 +34,28 @@ public class ProfileEtudiant extends Activity{
     }
 
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_etudiant);
 
+        //Récupération des élements passés en paramètres
+        Intent intentLoginActivity = getIntent();
+        loginEtudiant = intentLoginActivity.getStringExtra("loginEtudiant");
+
+        //Récupération des éléments de l'UI
+        final TextView infosProfile = (TextView)this.findViewById(R.id.txtProfil);
         uneliste = (ListView)findViewById(R.id.listMesMusiques);
+
+        Log.d("loginRecupere",loginEtudiant.toString());
+        infosProfile.setText("fdf");
+
+        displayInfosProfil();
+
+        infosProfile.setText("fdfaeae");
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.profile_etudiant);
+
+
 
 
         ArrayList<HashMap<String, String>> laliste = new ArrayList<HashMap<String, String>>();
@@ -73,6 +94,11 @@ public class ProfileEtudiant extends Activity{
         Context context = getApplicationContext();
         Intent intentAccessStudents = new Intent(this, LesGenres.class);
         startActivity(intentAccessStudents);
+    }
+
+    public void displayInfosProfil(){
+        //Chargement du profil
+
     }
 
     public void accessModifProfil(View v){

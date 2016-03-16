@@ -87,6 +87,7 @@ public class LoginActivity extends Activity implements OnClickListener {
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+
     private ProgressBar progressBarC;
     private static final String FLAG_SUCCESS = "success";
     private static final String FLAG_MESSAGE = "message";
@@ -94,6 +95,7 @@ public class LoginActivity extends Activity implements OnClickListener {
     public TextView connectionStatus;
     Button buttonLogin;
 
+    public Etudiant Coco;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,7 +139,7 @@ public class LoginActivity extends Activity implements OnClickListener {
                 Log.d("Connexion", "Connect Button Pressed !");
                 try {
                     Log.d("Retour tostring", mEmailView.getText().toString());
-                    Etudiant Coco = new Etudiant(mEmailView.getText().toString(), mPasswordView.getText().toString());
+                    Coco = new Etudiant(mEmailView.getText().toString(), mPasswordView.getText().toString());
 
                     progressBarC.setVisibility(View.VISIBLE);
                     progressBarC.setProgress(0);
@@ -169,7 +171,6 @@ public class LoginActivity extends Activity implements OnClickListener {
         @Override
         protected JSONObject doInBackground(Etudiant... params) {
 
-            //connectionStatus = (TextView)findViewById(R.id.connectionStatus);
             JSONObject jsonResponse = new JSONObject();
 
             try {
@@ -218,7 +219,7 @@ public class LoginActivity extends Activity implements OnClickListener {
                 if(loginOK == 1){
                     loginOkToast.show();
                     Intent launchProfile = new Intent(getApplicationContext(), ProfileEtudiant.class);
-                    launchProfile.putExtra("firstKeyName","FirstKeyValue");
+                    launchProfile.putExtra("loginEtudiant", response.getString("loginEtudiant"));
                     startActivity(launchProfile);
                 }else{
                     loginFailToast.show();
