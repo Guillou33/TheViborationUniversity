@@ -108,5 +108,14 @@ public class Etudiant {
         this.pathImage = pathImage;
     }
 
+    public Etudiant(){
+
+    }
+    public Etudiant(String logineleve, String passwordeleve){
+        this.logineleve = logineleve;
+        this.passwordeleve = passwordeleve;
+    }
+
+
 
 }
